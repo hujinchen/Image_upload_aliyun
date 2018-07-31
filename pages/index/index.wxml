@@ -1,0 +1,6 @@
+<!--index.wxml-->
+<view class="container">
+  <view class="userinfo">
+    <button type='primary' bindtap='choose'>选择照片</button>
+  </view>
+</view>
