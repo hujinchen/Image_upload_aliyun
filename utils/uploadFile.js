@@ -23,8 +23,14 @@ const uploadFile = function (filePath, dir, successc, failc) {
   }
   
   console.log('上传图片.....');
+  
+  // 获取上传的文件类型
+  let fileTypeIndex = filePath.lastIndexOf('.');
+  let fileType = filePath.substring(fileTypeIndex);
+
   //图片名字 可以自行定义，     这里是采用当前的时间戳 + 150内的随机数来给图片命名的
-  const aliyunFileKey = dir + new Date().getTime() + Math.floor(Math.random() * 150) + '.png';
+  // const aliyunFileKey = dir + new Date().getTime() + Math.floor(Math.random() * 150) + '.png';
+  const aliyunFileKey = dir + new Date().getTime() + Math.floor(Math.random() * 150) + fileType;
   
   const aliyunServerURL = env.uploadImageUrl;//OSS地址，需要https
   const accessid = env.OSSAccessKeyId;
